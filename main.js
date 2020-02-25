@@ -1,9 +1,13 @@
 
 // query params should contain pageId, source, psid, country, province, 
 // data = { pageId: 'kjasdhkjhsdfkjjaksdf', psid: 'kjasdhfjksdf', source: 'yellowmessenger', country: ['India', 'Afganistan', 'China'], province: ['Chennai', 'abudhabi', 'bengaluru'] }
+
+console.log("in here")
+
 const getQueryParams = (params, url) => {
     let href = url;
     console.log(params);
+    params = decodeURI(params);
     //this expression is to get the query strings
     let reg = new RegExp('[?&]' + params + '=([^&#]*)', 'i');
     let queryString = reg.exec(href);
