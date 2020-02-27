@@ -7,17 +7,16 @@
 
 const getQueryParams = (params, url) => {
 
-    let href = url;
-  //  console.log(params,"params");
-    //this expression is to get the query strings
-    let reg = new RegExp('[?&]' + params + '=([^&#]*)', 'i');
-    let queryString = reg.exec(href);
-    return queryString ? queryString[1] : null;
+  let href = url;
+
+  let reg = new RegExp('[?&]' + params + '=([^&#]*)', 'i');
+  let queryString = reg.exec(href);
+  return queryString ? queryString[1] : null;
 };
 
 window.onload = () => {
-
-    const paramString = getQueryParams('data', window.location);
-    const decodedString = decodeURIComponent(paramString);
-    document.getElementById("htmlcontent").innerHTML = decodedString
+  const paramString = getQueryParams('data', window.location);
+  const decodedString = decodeURIComponent(paramString);
+  window.document.write(decodedString)
+  // document.getElementById("htmlcontent").innerHTML = decodedString
 }
